@@ -5,8 +5,8 @@ e_dot = '-e .'
 def get_requirements(file_path:str)->List[str]:
     requirements = []
     with open(file_path)as file_obj:
-        requrements = file_obj.readlines()
-        requirements = [req.replace('\n',"") for req in requirements]
+        requirements = file_obj.readlines()
+        requirements = [req.strip() for req in requirements]
 
         if e_dot in requirements:
             requirements.remove(e_dot)
